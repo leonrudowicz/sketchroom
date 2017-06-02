@@ -8,11 +8,11 @@ import javax.swing.*;
 
 public class Create {
 
-	static JFrame window;
+	static JFrame windowStart;
 	JPanel panel;
 	JLabel label;
 	JButton neu;
-	JButton template;
+	JButton load;
 	JTextField breite;
 	JTextField länge;
 
@@ -23,20 +23,20 @@ public class Create {
 	static int längeInput;
 
 	public Create() {
-		
-		//JFrame
 
-		window = new JFrame("Create Room");
-		window.setSize(500, 300);
-		window.setResizable(false);
-		window.setLocationRelativeTo(null);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setLayout(null);
+		// JFrame
 
-		//Neuer Raum Button
+		windowStart = new JFrame("Create Room");
+		windowStart.setSize(500, 300);
+		windowStart.setResizable(false);
+		windowStart.setLocationRelativeTo(null);
+		windowStart.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		windowStart.setLayout(null);
+
+		// Neuer Raum Button
 
 		neu = new JButton("Neuer Raum");
-		neu.setBounds(40, 150, 145, 40);
+		neu.setBounds(50, 150, 145, 40);
 		neu.setVisible(true);
 		neu.setBackground(new Color(48, 120, 154));
 		neu.setForeground(Color.WHITE);
@@ -53,30 +53,31 @@ public class Create {
 				längeInput = Integer.parseInt(userInputL);
 
 				Funktion.neuRaum();
+				Funktion.neuControl();
 			}
 
 		});
-		window.add(neu);
-		
-		//Bestimmung und Add von Textfeld auf Frame
+		windowStart.add(neu);
+
+		// Bestimmung und Add von Textfeld auf Frame
 		breite = new JTextField("Breite");
-		breite.setBounds(40, 100, 145, 40);
+		breite.setBounds(50, 100, 145, 40);
 
 		länge = new JTextField("Länge");
-		länge.setBounds(40, 50, 145, 40);
+		länge.setBounds(50, 50, 145, 40);
 
-		window.add(breite);
-		window.add(länge);
-		
-		//Template Button
-		
-		template = new JButton("Vorlage");
-		template.setBounds(250, 150, 145, 40);
-		template.setVisible(true);
-		template.setBackground(new Color(48, 120, 154));
-		template.setForeground(Color.WHITE);
-		template.setFocusPainted(false);
-		template.addActionListener(new ActionListener() {
+		windowStart.add(breite);
+		windowStart.add(länge);
+
+		// Template Button
+
+		load = new JButton("Vorlage");
+		load.setBounds(250, 150, 145, 40);
+		load.setVisible(true);
+		load.setBackground(new Color(48, 120, 154));
+		load.setForeground(Color.WHITE);
+		load.setFocusPainted(false);
+		load.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -85,11 +86,9 @@ public class Create {
 			}
 
 		});
-		window.add(template);
-		
-		
-		
-		window.setVisible(true);
+		windowStart.add(load);
+
+		windowStart.setVisible(true);
 	}
 
 }
