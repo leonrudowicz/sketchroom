@@ -82,7 +82,7 @@ public class Create {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				Funktion.openOptions();
+				Funktion.openLoad();
 			}
 
 		});

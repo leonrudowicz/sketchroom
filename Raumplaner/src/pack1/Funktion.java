@@ -16,7 +16,7 @@ public class Funktion {
 	
 	static JTextField code;
 
-	static JButton save;
+	static JButton save, submit;
 	
 	static Zeichnen draw;
 
@@ -51,7 +51,7 @@ public class Funktion {
 		windowRaum.setVisible(true);
 	}
 	
-	public static void openOptions(){
+	public static void openLoad(){
 		Create.windowStart.setVisible(false);
 		
 		windowCode = new JFrame("Optionen");
@@ -62,8 +62,32 @@ public class Funktion {
 		windowCode.setLayout(null);
 		
 		code = new JTextField("Hash-Code");
-		code.setBounds(40, 100, 145, 40);
+		code.setBounds(50, 100, 380, 40);
 		windowCode.add(code);
+		
+		submit = new JButton("Submit");
+		submit.setBounds(200, 150, 100, 40);
+		submit.setBackground(new Color(48, 120, 154));
+		submit.setForeground(Color.WHITE);
+		submit.setFocusPainted(false);
+		submit.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				// Hash auswerten
+			}
+
+		});
+		submit.setVisible(true);
+		
+		
+		windowCode.add(submit);
+		
+		
+		
+		
+		
 		
 		windowCode.setVisible(true);
 		
