@@ -11,7 +11,11 @@ public class ActionHandler implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == Funktion.button[0]) {
+			Funktion.windowLoad.setVisible(false);
+			Create.windowStart.setVisible(true);
+
+		}
 
 	}
-
 }

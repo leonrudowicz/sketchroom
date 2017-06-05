@@ -7,10 +7,10 @@ import java.awt.RenderingHints;
 
 import javax.swing.JLabel;
 
-public class ZeichnenRaum extends JLabel {
-
+public class ZeichnenForm extends JLabel {
 	
-	static int squareW, squareH;
+	
+
 	private static final long serialVersionUID = 1L;
 
 	protected void paintComponent(Graphics g) {
@@ -24,10 +24,11 @@ public class ZeichnenRaum extends JLabel {
 		((Graphics2D) g).setStroke(new BasicStroke(3));
 
 		
-		squareW = Create.breiteInput;
-		squareH = Create.längeInput;
 		
-		g.drawImage(ImageLoader.square, 0,0 , squareW - 10, squareH - 35, null);
+		g.drawImage(ImageLoader.square, 50, 50, 125, 125, null);
+		g.drawImage(ImageLoader.rechtsOben, 175, 50, 125, 125, null);
+		
+		
 		
 		
 		

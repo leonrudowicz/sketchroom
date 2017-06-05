@@ -11,16 +11,12 @@ public class Create {
 	static JFrame windowStart;
 	JPanel panel;
 	JLabel label;
-	JButton neu;
-	JButton load;
-	JTextField breite;
-	JTextField länge;
+	JButton neu, load, form;
+	JTextField breite, länge;
 
-	static String userInputL;
-	static String userInputB;
+	static String userInputL, userInputB;
 
-	static int breiteInput;
-	static int längeInput;
+	static int breiteInput, längeInput;
 
 	public Create() {
 
@@ -87,6 +83,25 @@ public class Create {
 
 		});
 		windowStart.add(load);
+		
+		// Form
+		
+		form = new JButton("Form");
+		form.setBounds(250, 50, 145, 40);
+		form.setVisible(true);
+		form.setBackground(new Color(48, 120, 154));
+		form.setForeground(Color.WHITE);
+		form.setFocusPainted(false);
+		form.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				Funktion.openForm();
+			}
+
+		});
+		windowStart.add(form);
 
 		windowStart.setVisible(true);
 	}
