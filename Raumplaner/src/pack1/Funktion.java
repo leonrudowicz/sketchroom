@@ -17,7 +17,7 @@ public class Funktion {
 	
 	static JTextField code;
 
-	static JButton save, submitCode, submitForm;
+	static JButton save, submitCode, submitForm, back;
 	
 	static ZeichnenRaum drawRaum;
 	static ZeichnenControl drawControl;
@@ -79,6 +79,24 @@ public class Funktion {
 		});
 		submitCode.setVisible(true);
 		windowCode.add(submitCode);
+		
+		back = new JButton("Back");
+		back.setBounds(100, 150, 100, 40);
+		back.setBackground(new Color(48, 120, 154));
+		back.setForeground(Color.WHITE);
+		back.setFocusPainted(false);
+		back.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				windowCode.setVisible(false);
+				Create.windowStart.setVisible(true);
+			}
+
+		});
+		back.setVisible(true);
+		windowCode.add(back);
 
 		
 		windowCode.setVisible(true);
