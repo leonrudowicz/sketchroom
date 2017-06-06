@@ -11,19 +11,14 @@ import javax.swing.JTextField;
 
 public class Funktion {
 	
-	static JFrame windowRaum, windowCode, windowControl, windowLoad;
+	static JFrame windowRaum, windowControl;
 	
 	static int raumB, raumL;
 	
-	static JTextField code;
-
-	static JButton save, submitCode, submitForm, back;
-	
+	static JButton save;
 	static ZeichnenRaum drawRaum;
 	static ZeichnenControl drawControl;
-	static ZeichnenForm drawForm;
 
-	static JButton button[] = new JButton[16];
 	public static void neuRaum(){
 		
 		// Werte bekommen 
@@ -50,56 +45,9 @@ public class Funktion {
 	}
 	
 	public static void openLoad(){
+		
 		Create.windowStart.setVisible(false);
-		
-		windowCode = new JFrame("Optionen");
-		windowCode.setSize(500, 300);
-		windowCode.setResizable(false);
-		windowCode.setLocationRelativeTo(null);
-		windowCode.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		windowCode.setLayout(null);
-		
-		code = new JTextField("Hash-Code");
-		code.setBounds(50, 100, 380, 40);
-		windowCode.add(code);
-		
-		submitCode = new JButton("Submit");
-		submitCode.setBounds(200, 150, 100, 40);
-		submitCode.setBackground(new Color(48, 120, 154));
-		submitCode.setForeground(Color.WHITE);
-		submitCode.setFocusPainted(false);
-		submitCode.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				// Hash auswerten
-			}
-
-		});
-		submitCode.setVisible(true);
-		windowCode.add(submitCode);
-		
-		back = new JButton("Back");
-		back.setBounds(100, 150, 100, 40);
-		back.setBackground(new Color(48, 120, 154));
-		back.setForeground(Color.WHITE);
-		back.setFocusPainted(false);
-		back.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				windowCode.setVisible(false);
-				Create.windowStart.setVisible(true);
-			}
-
-		});
-		back.setVisible(true);
-		windowCode.add(back);
-
-		
-		windowCode.setVisible(true);
+		Var.windowCode.setVisible(true);
 		
 	}
 
@@ -137,42 +85,10 @@ public class Funktion {
 		
 	}
 
-	public static void openForm() {
+	public static void openForm(){
 		
+		Var.windowForm.setVisible(true);
 		Create.windowStart.setVisible(false);
-		
-		windowLoad = new JFrame("Form - Wähle deinen Grundriss");
-		windowLoad.setSize(600, 600);
-		windowLoad.setResizable(false);
-		windowLoad.setLocationRelativeTo(null);
-		windowLoad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		windowLoad.setLayout(null);
-
-		///////Buttons////////
-		
-		for(int i = 0; i<button.length; i++){
-			button[i] = new JButton();
-			button[i].setVisible(true);
-			button[i].addActionListener(new ActionHandler());
-			button[i].setFocusPainted(false);
-			button[i].setContentAreaFilled(false);
-			button[i].setBorder(null);
-			windowLoad.add(button[i]);
-		}
-		
-		ButtonPlacement.place();
-		
-		drawForm = new ZeichnenForm();
-		drawForm.setBounds(0, 0, 600, 600);
-		drawForm.setVisible(true);
-		windowLoad.add(drawForm);
-		
-		
-		//Quadrat 
-		
-		
-		
-		windowLoad.setVisible(true);
 		
 	}
 }
