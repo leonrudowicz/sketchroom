@@ -20,10 +20,7 @@ public class ZeichnenControl extends JLabel {
 		Graphics2D g2d = (Graphics2D) g;
 
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-		
-
-		
+	
 		g.drawImage(ImageLoader.teppich, 200, 200, 50, 50, null);
 		
 		//Form
