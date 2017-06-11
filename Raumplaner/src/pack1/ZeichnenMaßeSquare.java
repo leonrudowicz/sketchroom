@@ -7,7 +7,7 @@ import java.awt.RenderingHints;
 
 import javax.swing.JLabel;
 
-public class ZeichnenRaum extends JLabel {
+public class ZeichnenMaﬂeSquare extends JLabel {
 
 	
 	static int squareW, squareH;
@@ -24,10 +24,7 @@ public class ZeichnenRaum extends JLabel {
 		((Graphics2D) g).setStroke(new BasicStroke(3));
 
 		
-		squareW = Var.breiteInput;
-		squareH = Var.laengeInput;
-		
-		g.drawImage(ImageLoader.square, 0,0 , squareW - 10, squareH - 35, null);
+		g.drawImage(ImageLoader.squareFarbe, 225, 45 , 145, 145, null);
 		
 		
 		

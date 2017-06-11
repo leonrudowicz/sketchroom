@@ -12,11 +12,11 @@ public class Create {
 	JPanel panel;
 	JLabel label;
 	JButton neu, load, form;
-	JTextField breite, länge;
+	
 
-	static String userInputL, userInputB;
+	
 
-	static int breiteInput, längeInput;
+	
 
 	public Create() {
 
@@ -31,40 +31,7 @@ public class Create {
 
 		// Neuer Raum Button
 
-		neu = new JButton("Neuer Raum");
-		neu.setBounds(50, 150, 145, 40);
-		neu.setVisible(true);
-		neu.setBackground(new Color(48, 120, 154));
-		neu.setForeground(Color.WHITE);
-		neu.setFocusPainted(false);
-		neu.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				userInputB = breite.getText();
-				breiteInput = Integer.parseInt(userInputB);
-
-				userInputL = länge.getText();
-				längeInput = Integer.parseInt(userInputL);
-
-				Funktion.neuRaum();
-				Funktion.neuControl();
-			}
-
-		});
-		windowStart.add(neu);
-
-		// Bestimmung und Add von Textfeld auf Frame
-		breite = new JTextField("Breite");
-		breite.setBounds(50, 100, 145, 40);
-
-		länge = new JTextField("Länge");
-		länge.setBounds(50, 50, 145, 40);
-
-		windowStart.add(breite);
-		windowStart.add(länge);
-
+		
 		// Template Button
 
 		load = new JButton("Vorlage");

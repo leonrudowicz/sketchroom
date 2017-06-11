@@ -17,7 +17,7 @@ public class ActionHandler implements ActionListener {
 		if (e.getSource() == Var.button[0]) {
 			
 			Var.windowForm.setVisible(false);
-			
+			Var.windowMaﬂe.setVisible(true);
 		
 		}
 

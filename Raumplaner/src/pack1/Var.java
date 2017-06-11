@@ -10,16 +10,23 @@ import javax.swing.JTextField;
 
 public class Var {
 	static JButton button[] = new JButton[16];
-	static JButton submitCode, backForm, backCode;
-	static JFrame windowForm, windowCode;
-	static JTextField code;
+	static JButton submitCode, backForm, backCode, neu, save;
+	static JFrame windowForm, windowCode, windowMaﬂe, windowRaumSquare, windowControl;
+	static JTextField code, breite, laenge;;
 	ZeichnenForm drawForm;
+	ZeichnenRaum drawRaum;
+	ZeichnenMaﬂeSquare drawMaﬂeSquare;
+	ZeichnenControl drawControl;
+	static int breiteInput, laengeInput, raumB, raumL;
+	static String userInputL, userInputB;
 
 	public Var() {
-		//////////////////////////////////////////////////////////////// WINDOW FORM //////////////////////////////////////////////
+		//////////////////////////////////////////////////////////////// WINDOW
+		//////////////////////////////////////////////////////////////// FORM
+		//////////////////////////////////////////////////////////////// //////////////////////////////////////////////
 
 		// Add Window Form
-		windowForm = new JFrame("Form - W‰hle deinen Grundriss");
+		windowForm = new JFrame("Form - Waehle deinen Grundriss");
 		windowForm.setSize(600, 600);
 		windowForm.setResizable(false);
 		windowForm.setLocationRelativeTo(null);
@@ -69,8 +76,9 @@ public class Var {
 
 		windowForm.setVisible(false);
 
-		//////////////////////////////////////////////////////////////////// WINDOW CODE///////////////////////////////////////////////////////////////
-		
+		//////////////////////////////////////////////////////////////////// WINDOW
+		//////////////////////////////////////////////////////////////////// CODE///////////////////////////////////////////////////////////////
+
 		windowCode = new JFrame("Optionen");
 		windowCode.setSize(500, 300);
 		windowCode.setResizable(false);
@@ -118,10 +126,110 @@ public class Var {
 		windowCode.add(backCode);
 
 		windowCode.setVisible(false);
-		
-		////////////////////////////////////////// QUADRAT //////////////////////////////////////
-		
-		
+
+		////////////////////////////////////////// Maﬂ Eingabe
+		////////////////////////////////////////// /////////////////////////////////
+
+		windowMaﬂe = new JFrame("Maﬂe bestimmen");
+		windowMaﬂe.setSize(500, 300);
+		windowMaﬂe.setResizable(false);
+		windowMaﬂe.setLocationRelativeTo(null);
+		windowMaﬂe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		windowMaﬂe.setLayout(null);
+		windowMaﬂe.setVisible(false);
+
+		// Bestimmung und Add von Textfeld auf Frame
+
+		breite = new JTextField("Breite");
+		breite.setBounds(50, 100, 145, 40);
+
+		laenge = new JTextField("Laenge");
+		laenge.setBounds(50, 50, 145, 40);
+
+		windowMaﬂe.add(breite);
+		windowMaﬂe.add(laenge);
+
+		drawMaﬂeSquare = new ZeichnenMaﬂeSquare();
+		drawMaﬂeSquare.setBounds(0, 0, 500, 300);
+		drawMaﬂeSquare.setVisible(true);
+		windowMaﬂe.add(drawMaﬂeSquare);
+
+		neu = new JButton("Neuer Raum");
+		neu.setBounds(50, 150, 145, 40);
+		neu.setVisible(true);
+		neu.setBackground(new Color(48, 120, 154));
+		neu.setForeground(Color.WHITE);
+		neu.setFocusPainted(false);
+		neu.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				userInputB = breite.getText();
+				breiteInput = Integer.parseInt(userInputB);
+
+				userInputL = laenge.getText();
+				laengeInput = Integer.parseInt(userInputL);
+
+				Funktion.neuRaumSquare();
+				Funktion.neuControl();
+				Var.windowMaﬂe.setVisible(false);
+			}
+
+		});
+		windowMaﬂe.add(neu);
+
+		////////////////////////////////////////// QUADRAT
+		////////////////////////////////////////// //////////////////////////////////////
+
+		raumB = breiteInput;
+		raumL = laengeInput;
+
+		windowRaumSquare = new JFrame("Room");
+		windowRaumSquare.setSize(raumB, raumL);
+		windowRaumSquare.setResizable(false);
+		windowRaumSquare.setLocationRelativeTo(null);
+		windowRaumSquare.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		windowRaumSquare.setLayout(null);
+
+		drawRaum = new ZeichnenRaum();
+		drawRaum.setBounds(0, 0, raumB, raumL);
+		drawRaum.setVisible(true);
+		windowRaumSquare.add(drawRaum);
+
+		windowRaumSquare.setVisible(false);
+
+		//////////////////////////////// Control////////////////////////////////
+
+		windowControl = new JFrame("Control");
+		windowControl.setSize(300, 600);
+		windowControl.setResizable(false);
+		windowControl.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		windowControl.setLayout(null);
+
+		save = new JButton("Save");
+		save.setBounds(80, 450, 100, 40);
+		save.setVisible(true);
+		save.setBackground(new Color(48, 120, 154));
+		save.setForeground(Color.WHITE);
+		save.setFocusPainted(false);
+		save.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				// Hash dings hier
+			}
+
+		});
+		drawControl = new ZeichnenControl();
+		drawControl.setBounds(0, 0, 20, 20);
+		drawControl.setVisible(true);
+		windowControl.add(drawControl);
+
+		windowControl.add(save);
+
+		windowControl.setVisible(false);
 
 	}
 
