@@ -42,4 +42,5 @@ public class Funktion {
 		Create.windowStart.setVisible(false);
 		
 	}
+	
 }

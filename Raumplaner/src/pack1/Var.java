@@ -1,6 +1,7 @@
 package pack1;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,19 +12,18 @@ import javax.swing.JTextField;
 public class Var {
 	static JButton button[] = new JButton[16];
 	static JButton submitCode, backForm, backCode, neu, save;
-	static JFrame windowForm, windowCode, windowMaﬂe, windowRaumSquare, windowControl;
-	static JTextField code, breite, laenge;;
+	static JFrame windowForm, windowCode, windowMasse, windowRaumSquare, windowControl;
+	static JTextField code, rot, blue, orange, magenta;
 	ZeichnenForm drawForm;
 	ZeichnenRaum drawRaum;
-	ZeichnenMaﬂeSquare drawMaﬂeSquare;
+	ZeichnenMasseSquare drawMasseSquare;
+	Zeichnen draw;
 	ZeichnenControl drawControl;
-	static int breiteInput, laengeInput, raumB, raumL;
+	static int breiteInput, laengeInput, stateZeichnen;
 	static String userInputL, userInputB;
-
+	
 	public Var() {
-		//////////////////////////////////////////////////////////////// WINDOW
-		//////////////////////////////////////////////////////////////// FORM
-		//////////////////////////////////////////////////////////////// //////////////////////////////////////////////
+		/////////////////////////// WINDOW FORM/////////////
 
 		// Add Window Form
 		windowForm = new JFrame("Form - Waehle deinen Grundriss");
@@ -48,10 +48,16 @@ public class Var {
 		ButtonPlacement.place();
 
 		// Add draw Funktion
-		drawForm = new ZeichnenForm();
-		drawForm.setBounds(0, 0, 600, 600);
-		drawForm.setVisible(true);
-		windowForm.add(drawForm);
+		
+		draw = new Zeichnen();
+		draw.setBounds(0,0,600,600);
+		draw.setVisible(true);
+		windowForm.add(draw);
+		
+		//drawForm = new ZeichnenForm();
+		//drawForm.setBounds(0, 0, 600, 600);
+		//	drawForm.setVisible(true);
+		//windowForm.add(drawForm);
 
 		// Back Button
 		backForm = new JButton("Back");
@@ -72,12 +78,9 @@ public class Var {
 		backForm.setVisible(true);
 		windowForm.add(backForm);
 
-		// Quadrat
-
 		windowForm.setVisible(false);
 
-		//////////////////////////////////////////////////////////////////// WINDOW
-		//////////////////////////////////////////////////////////////////// CODE///////////////////////////////////////////////////////////////
+		///////////// WINDOW CODE///////////////////////
 
 		windowCode = new JFrame("Optionen");
 		windowCode.setSize(500, 300);
@@ -127,32 +130,41 @@ public class Var {
 
 		windowCode.setVisible(false);
 
-		////////////////////////////////////////// Maﬂ Eingabe
-		////////////////////////////////////////// /////////////////////////////////
+		/////////////////// Mass Eingabe///////////
 
-		windowMaﬂe = new JFrame("Maﬂe bestimmen");
-		windowMaﬂe.setSize(500, 300);
-		windowMaﬂe.setResizable(false);
-		windowMaﬂe.setLocationRelativeTo(null);
-		windowMaﬂe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		windowMaﬂe.setLayout(null);
-		windowMaﬂe.setVisible(false);
+		windowMasse = new JFrame("Masse bestimmen");
+		windowMasse.setSize(600, 300);
+		windowMasse.setResizable(false);
+		windowMasse.setLocationRelativeTo(null);
+		windowMasse.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		windowMasse.setLayout(null);
+		windowMasse.setVisible(false);
 
 		// Bestimmung und Add von Textfeld auf Frame
 
-		breite = new JTextField("Breite");
-		breite.setBounds(50, 100, 145, 40);
+		rot = new JTextField("Breite");
+		rot.setForeground(Color.red);
+		rot.setBounds(50, 100, 145, 40);
 
-		laenge = new JTextField("Laenge");
-		laenge.setBounds(50, 50, 145, 40);
+		blue = new JTextField("Laenge");
+		blue.setForeground(Color.blue);
+		blue.setBounds(50, 50, 145, 40);
+		
+		orange = new JTextField("Laenge");
+		orange.setForeground(Color.orange);
+		orange.setBounds(200, 50, 145, 40);
+		
+		magenta = new JTextField("lol");
+		magenta.setForeground(Color.magenta);
+		magenta.setBounds(200, 100, 145, 40);
+		
 
-		windowMaﬂe.add(breite);
-		windowMaﬂe.add(laenge);
+		
 
-		drawMaﬂeSquare = new ZeichnenMaﬂeSquare();
-		drawMaﬂeSquare.setBounds(0, 0, 500, 300);
-		drawMaﬂeSquare.setVisible(true);
-		windowMaﬂe.add(drawMaﬂeSquare);
+		drawMasseSquare = new ZeichnenMasseSquare();
+		drawMasseSquare.setBounds(0, 0, 500, 300);
+		drawMasseSquare.setVisible(true);
+		windowMasse.add(drawMasseSquare);
 
 		neu = new JButton("Neuer Raum");
 		neu.setBounds(50, 150, 145, 40);
@@ -165,38 +177,37 @@ public class Var {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				userInputB = breite.getText();
+				userInputB = rot.getText();
 				breiteInput = Integer.parseInt(userInputB);
 
-				userInputL = laenge.getText();
+				userInputL = blue.getText();
 				laengeInput = Integer.parseInt(userInputL);
 
 				Funktion.neuRaumSquare();
 				Funktion.neuControl();
-				Var.windowMaﬂe.setVisible(false);
+				Var.windowMasse.setVisible(false);
+
+				windowRaumSquare.setSize(breiteInput, laengeInput);
+				drawRaum.setBounds(0, 0, breiteInput, laengeInput);
+
 			}
 
 		});
-		windowMaﬂe.add(neu);
+		windowMasse.add(neu);
 
 		////////////////////////////////////////// QUADRAT
 		////////////////////////////////////////// //////////////////////////////////////
 
-		raumB = breiteInput;
-		raumL = laengeInput;
-
 		windowRaumSquare = new JFrame("Room");
-		windowRaumSquare.setSize(raumB, raumL);
 		windowRaumSquare.setResizable(false);
 		windowRaumSquare.setLocationRelativeTo(null);
 		windowRaumSquare.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		windowRaumSquare.setLayout(null);
 
 		drawRaum = new ZeichnenRaum();
-		drawRaum.setBounds(0, 0, raumB, raumL);
+
 		drawRaum.setVisible(true);
 		windowRaumSquare.add(drawRaum);
-
 		windowRaumSquare.setVisible(false);
 
 		//////////////////////////////// Control////////////////////////////////

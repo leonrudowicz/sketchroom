@@ -7,10 +7,10 @@ import java.awt.RenderingHints;
 
 import javax.swing.JLabel;
 
-public class ZeichnenControl extends JLabel {
+public class ZeichnenMasseSquare extends JLabel {
 
 	
-
+	static int squareW, squareH;
 	private static final long serialVersionUID = 1L;
 
 	protected void paintComponent(Graphics g) {
@@ -21,20 +21,14 @@ public class ZeichnenControl extends JLabel {
 
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-		
+		((Graphics2D) g).setStroke(new BasicStroke(3));
 
 		
-		g.drawImage(ImageLoader.teppich, 200, 200, 50, 50, null);
+		g.drawImage(ImageLoader.squareFarbe, 225, 45 , 145, 145, null);
 		
-		//Form
-		if(Var.stateZeichnen == 0){
-			g.drawImage(ImageLoader.square, 50, 50, 125, 125, null);
-			g.drawImage(ImageLoader.rechtsOben, 175, 50, 125, 125, null);
-			
-		}
-		else if(Var.stateZeichnen == 1){
-			
-		}
+		
+		
+		
 	}
 
 }
