@@ -14,26 +14,27 @@ public class Funktion {
 	static JFrame windowRaum, windowControl;
 	
 	static JButton save;
-	static ZeichnenRaum drawRaum;
-	static ZeichnenControl drawControl;
+
 
 	public static void neuRaumSquare(){
-		
-		Var.windowRaumSquare.setVisible(true);
-		
+		new Room();
+		Room.room.setVisible(true);
+		Room.room.add(Var.draw);
 	}
 	
 	public static void openLoad(){
 		
 		Create.windowStart.setVisible(false);
-		Var.windowCode.setVisible(true);
+		new Code();
+		Code.windowCode.setVisible(true);
 		
 	}
 
 	public static void neuControl() {
+		new Control();
 		
-		Var.windowControl.setVisible(true);
-		
+		Control.windowControl.setVisible(true);
+		Control.windowControl.add(Control.drawControl);
 	}
 
 	public static void openForm(){
@@ -43,9 +44,9 @@ public class Funktion {
 		
 		Create.windowStart.setVisible(false);
 		
-		Var.createForm();
+		new Grundriss();
 		
-		Var.windowForm.setVisible(true);
+		Grundriss.windowForm.setVisible(true);
 		
 		
 		

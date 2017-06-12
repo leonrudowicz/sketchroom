@@ -9,54 +9,52 @@ public class ActionHandler implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == Var.button[0]) {
+		if (e.getSource() == Grundriss.button[0]) {
 			Var.stateZeichnen = 2;
+			new Masse();
 			
-			Var.windowMasse.add(Var.rot);
-			Var.windowMasse.add(Var.blue);
-			
-			Var.windowForm.setVisible(false);
-			Var.windowMasse.setVisible(true);
-			
-			
-			
-			
+			Masse.windowMasse.add(Masse.rot);
+			Masse.windowMasse.add(Masse.blue);
 
-		} else if (e.getSource() == Var.button[1]) {
-			
-			Var.windowMasse.add(Var.rot);
-			Var.windowMasse.add(Var.blue);
-			Var.windowMasse.add(Var.orange);
-			Var.windowMasse.add(Var.magenta);
-			
-			Var.windowForm.setVisible(false);
-			Var.windowMasse.setVisible(true);
+			Grundriss.windowForm.setVisible(false);
+			Masse.windowMasse.setVisible(true);
 
-		} else if (e.getSource() == Var.button[2]) {
+		} else if (e.getSource() == Grundriss.button[1]) {
+			Var.stateZeichnen = 4;
+			new Masse();
+			Masse.windowMasse.add(Masse.rot);
+			Masse.windowMasse.add(Masse.blue);
+			Masse.windowMasse.add(Masse.orange);
+			Masse.windowMasse.add(Masse.magenta);
 
-		} else if (e.getSource() == Var.button[3]) {
+			Grundriss.windowForm.setVisible(false);
+			Masse.windowMasse.setVisible(true);
 
-		} else if (e.getSource() == Var.button[4]) {
+		} else if (e.getSource() == Grundriss.button[2]) {
 
-		} else if (e.getSource() == Var.button[5]) {
+		} else if (e.getSource() == Grundriss.button[3]) {
 
-		} else if (e.getSource() == Var.button[6]) {
+		} else if (e.getSource() == Grundriss.button[4]) {
 
-		} else if (e.getSource() == Var.button[7]) {
+		} else if (e.getSource() == Grundriss.button[5]) {
 
-		} else if (e.getSource() == Var.button[8]) {
+		} else if (e.getSource() == Grundriss.button[6]) {
 
-		} else if (e.getSource() == Var.button[9]) {
+		} else if (e.getSource() == Grundriss.button[7]) {
 
-		} else if (e.getSource() == Var.button[10]) {
+		} else if (e.getSource() == Grundriss.button[8]) {
 
-		} else if (e.getSource() == Var.button[11]) {
+		} else if (e.getSource() == Grundriss.button[9]) {
 
-		} else if (e.getSource() == Var.button[12]) {
+		} else if (e.getSource() == Grundriss.button[10]) {
 
-		} else if (e.getSource() == Var.button[13]) {
+		} else if (e.getSource() == Grundriss.button[11]) {
 
-		} else if (e.getSource() == Var.button[14]) {
+		} else if (e.getSource() == Grundriss.button[12]) {
+
+		} else if (e.getSource() == Grundriss.button[13]) {
+
+		} else if (e.getSource() == Grundriss.button[14]) {
 
 		}
 

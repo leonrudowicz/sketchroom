@@ -13,11 +13,6 @@ public class Create {
 	JLabel label;
 	JButton neu, load, form;
 	
-
-	
-
-	
-
 	public Create() {
 
 		// JFrame
@@ -29,9 +24,6 @@ public class Create {
 		windowStart.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		windowStart.setLayout(null);
 
-		// Neuer Raum Button
-
-		
 		// Template Button
 
 		load = new JButton("Vorlage");
