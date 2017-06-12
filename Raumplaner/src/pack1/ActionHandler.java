@@ -7,21 +7,20 @@ import javax.swing.JFrame;
 
 public class ActionHandler implements ActionListener {
 
-	public ActionHandler() {
-		
-		
-
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == Var.button[0]) {
+			Var.stateZeichnen = 2;
 			
 			Var.windowMasse.add(Var.rot);
 			Var.windowMasse.add(Var.blue);
 			
 			Var.windowForm.setVisible(false);
 			Var.windowMasse.setVisible(true);
+			
+			
+			
+			
 
 		} else if (e.getSource() == Var.button[1]) {
 			

@@ -14,71 +14,13 @@ public class Var {
 	static JButton submitCode, backForm, backCode, neu, save;
 	static JFrame windowForm, windowCode, windowMasse, windowRaumSquare, windowControl;
 	static JTextField code, rot, blue, orange, magenta;
-	ZeichnenForm drawForm;
 	ZeichnenRaum drawRaum;
-	ZeichnenMasseSquare drawMasseSquare;
-	Zeichnen draw;
+	static Zeichnen draw;
 	ZeichnenControl drawControl;
 	static int breiteInput, laengeInput, stateZeichnen;
 	static String userInputL, userInputB;
-	
+
 	public Var() {
-		/////////////////////////// WINDOW FORM/////////////
-
-		// Add Window Form
-		windowForm = new JFrame("Form - Waehle deinen Grundriss");
-		windowForm.setSize(600, 600);
-		windowForm.setResizable(false);
-		windowForm.setLocationRelativeTo(null);
-		windowForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		windowForm.setLayout(null);
-
-		/////// Buttons////////
-
-		for (int i = 0; i < button.length; i++) {
-			button[i] = new JButton();
-			button[i].setVisible(true);
-			button[i].addActionListener(new ActionHandler());
-			button[i].setFocusPainted(false);
-			button[i].setContentAreaFilled(false);
-			button[i].setBorder(null);
-			windowForm.add(button[i]);
-		}
-		// Place Buttons
-		ButtonPlacement.place();
-
-		// Add draw Funktion
-		
-		draw = new Zeichnen();
-		draw.setBounds(0,0,600,600);
-		draw.setVisible(true);
-		windowForm.add(draw);
-		
-		//drawForm = new ZeichnenForm();
-		//drawForm.setBounds(0, 0, 600, 600);
-		//	drawForm.setVisible(true);
-		//windowForm.add(drawForm);
-
-		// Back Button
-		backForm = new JButton("Back");
-		backForm.setBounds(425, 425, 125, 125);
-		backForm.setBackground(new Color(48, 120, 154));
-		backForm.setForeground(Color.WHITE);
-		backForm.setFocusPainted(false);
-		backForm.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				windowForm.setVisible(false);
-				Create.windowStart.setVisible(true);
-			}
-
-		});
-		backForm.setVisible(true);
-		windowForm.add(backForm);
-
-		windowForm.setVisible(false);
 
 		///////////// WINDOW CODE///////////////////////
 
@@ -149,22 +91,23 @@ public class Var {
 		blue = new JTextField("Laenge");
 		blue.setForeground(Color.blue);
 		blue.setBounds(50, 50, 145, 40);
-		
+
 		orange = new JTextField("Laenge");
 		orange.setForeground(Color.orange);
 		orange.setBounds(200, 50, 145, 40);
-		
+
 		magenta = new JTextField("lol");
 		magenta.setForeground(Color.magenta);
 		magenta.setBounds(200, 100, 145, 40);
-		
 
-		
+		System.out.println(stateZeichnen);
+		if (Var.stateZeichnen == 2) {
+			draw = new Zeichnen();
+			draw.setVisible(true);
+			draw.setBounds(0, 0, 600, 300);
+			windowMasse.add(draw);
 
-		drawMasseSquare = new ZeichnenMasseSquare();
-		drawMasseSquare.setBounds(0, 0, 500, 300);
-		drawMasseSquare.setVisible(true);
-		windowMasse.add(drawMasseSquare);
+		}
 
 		neu = new JButton("Neuer Raum");
 		neu.setBounds(50, 150, 145, 40);
@@ -195,20 +138,7 @@ public class Var {
 		});
 		windowMasse.add(neu);
 
-		////////////////////////////////////////// QUADRAT
-		////////////////////////////////////////// //////////////////////////////////////
-
-		windowRaumSquare = new JFrame("Room");
-		windowRaumSquare.setResizable(false);
-		windowRaumSquare.setLocationRelativeTo(null);
-		windowRaumSquare.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		windowRaumSquare.setLayout(null);
-
-		drawRaum = new ZeichnenRaum();
-
-		drawRaum.setVisible(true);
-		windowRaumSquare.add(drawRaum);
-		windowRaumSquare.setVisible(false);
+		
 
 		//////////////////////////////// Control////////////////////////////////
 
@@ -244,4 +174,66 @@ public class Var {
 
 	}
 
+	public static void createForm() {
+		/////////////////////////// WINDOW FORM/////////////
+
+		// Add Window Form
+		windowForm = new JFrame("Form - Waehle deinen Grundriss");
+		windowForm.setSize(600, 600);
+		windowForm.setResizable(false);
+		windowForm.setLocationRelativeTo(null);
+		windowForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		windowForm.setLayout(null);
+
+		/////// Buttons////////
+
+		for (int i = 0; i < button.length; i++) {
+			button[i] = new JButton();
+			button[i].setVisible(true);
+			button[i].addActionListener(new ActionHandler());
+			button[i].setFocusPainted(false);
+			button[i].setContentAreaFilled(false);
+			button[i].setBorder(null);
+			windowForm.add(button[i]);
+		}
+		// Place Buttons
+		ButtonPlacement.place();
+
+		// Add draw Funktion
+
+		draw = new Zeichnen();
+
+		if (Var.stateZeichnen == 1) {
+			draw.setBounds(0, 0, 600, 600);
+			draw.setVisible(true);
+			windowForm.add(draw);
+
+		}
+
+		// Back Button
+		backForm = new JButton("Back");
+		backForm.setBounds(425, 425, 125, 125);
+		backForm.setBackground(new Color(48, 120, 154));
+		backForm.setForeground(Color.WHITE);
+		backForm.setFocusPainted(false);
+		backForm.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				windowForm.setVisible(false);
+				Create.windowStart.setVisible(true);
+			}
+
+		});
+		backForm.setVisible(true);
+		windowForm.add(backForm);
+
+		windowForm.setVisible(false);
+	}
+	
+	public static void createMasse(){
+		
+		
+	}
 }

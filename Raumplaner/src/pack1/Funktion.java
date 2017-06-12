@@ -38,8 +38,17 @@ public class Funktion {
 
 	public static void openForm(){
 		
-		Var.windowForm.setVisible(true);
+		
+		Var.stateZeichnen = 1;
+		
 		Create.windowStart.setVisible(false);
+		
+		Var.createForm();
+		
+		Var.windowForm.setVisible(true);
+		
+		
+		
 		
 	}
 	
