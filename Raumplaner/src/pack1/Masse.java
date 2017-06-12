@@ -36,11 +36,11 @@ public class Masse {
 		blue.setForeground(Color.blue);
 		blue.setBounds(50, 50, 145, 40);
 
-		orange = new JTextField("Laenge");
+		orange = new JTextField("Laenge 2");
 		orange.setForeground(Color.orange);
 		orange.setBounds(200, 50, 145, 40);
 
-		magenta = new JTextField("lol");
+		magenta = new JTextField("Breite 2");
 		magenta.setForeground(Color.magenta);
 		magenta.setBounds(200, 100, 145, 40);
 

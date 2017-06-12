@@ -27,7 +27,7 @@ public class Create {
 		// Template Button
 
 		load = new JButton("Vorlage");
-		load.setBounds(250, 150, 145, 40);
+		load.setBounds(275, 90, 145, 40);
 		load.setVisible(true);
 		load.setBackground(new Color(48, 120, 154));
 		load.setForeground(Color.WHITE);
@@ -46,7 +46,7 @@ public class Create {
 		// Form
 		
 		form = new JButton("Form");
-		form.setBounds(250, 50, 145, 40);
+		form.setBounds(75, 90, 145, 40);
 		form.setVisible(true);
 		form.setBackground(new Color(48, 120, 154));
 		form.setForeground(Color.WHITE);
