@@ -11,9 +11,9 @@ import javax.swing.JTextField;
 public class Masse {
 	static JFrame windowMasse;
 	static JTextField rot, blue, orange, magenta;
-	static JButton neu;
-	static int breiteInput, laengeInput;
-	static String userInputL, userInputB;
+	static JButton neuSquare, neuRechtsOben, masseBack;
+	static int breiteInput, laengeInput, breite2Input, laenge2Input;
+	static String userInputL, userInputB, userInputL2, userInputB2;
 
 	public Masse() {
 		/////////////////// Mass Eingabe///////////
@@ -47,14 +47,33 @@ public class Masse {
 		Var.draw.setVisible(true);
 		Var.draw.setBounds(0, 0, 600, 300);
 		windowMasse.add(Var.draw);
+		
+		masseBack = new JButton("Back");
+		masseBack.setBounds(460, 210, 90, 40);
+		masseBack.setBackground(new Color(48, 120, 154));
+		masseBack.setForeground(Color.WHITE);
+		masseBack.setFocusPainted(false);
+		masseBack.addActionListener(new ActionListener() {
 
-		neu = new JButton("Neuer Raum");
-		neu.setBounds(50, 150, 145, 40);
-		neu.setVisible(true);
-		neu.setBackground(new Color(48, 120, 154));
-		neu.setForeground(Color.WHITE);
-		neu.setFocusPainted(false);
-		neu.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Var.stateZeichnen = 1;
+				windowMasse.setVisible(false);
+				Grundriss.windowForm.setVisible(true);
+			}
+
+		});
+		masseBack.setVisible(true);
+		windowMasse.add(masseBack);
+		
+		//Neuer Raum für Square 
+		neuSquare = new JButton("Neuer Raum");
+		neuSquare.setBounds(50, 150, 145, 40);
+		neuSquare.setBackground(new Color(48, 120, 154));
+		neuSquare.setForeground(Color.WHITE);
+		neuSquare.setFocusPainted(false);
+		neuSquare.setVisible(false);
+		neuSquare.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -77,7 +96,44 @@ public class Masse {
 			}
 
 		});
-		windowMasse.add(neu);
+		windowMasse.add(neuSquare);
+		
+		//Neuer Raum für RechtsOben
+		neuRechtsOben = new JButton("Neuer Raum");
+		neuRechtsOben.setBounds(125, 150, 145, 40);
+		neuRechtsOben.setBackground(new Color(48, 120, 154));
+		neuRechtsOben.setForeground(Color.WHITE);
+		neuRechtsOben.setFocusPainted(false);
+		neuRechtsOben.setVisible(false);
+		neuRechtsOben.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				userInputB = rot.getText();
+				breiteInput = Integer.parseInt(userInputB);
+
+				userInputL = blue.getText();
+				laengeInput = Integer.parseInt(userInputL);
+				
+				userInputB2 = magenta.getText();
+				breite2Input = Integer.parseInt(userInputB2);
+
+				userInputL2 = orange.getText();
+				laenge2Input = Integer.parseInt(userInputL2);
+				
+				Funktion.neuControl(); 
+				Masse.windowMasse.setVisible(false);
+				Funktion.neuRaumSquare();
+				
+				Var.stateZeichnen = 5;
+				Var.draw.setBounds(0, 0, breiteInput, laengeInput);
+				
+
+			}
+
+		});
+		windowMasse.add(neuRechtsOben);
 	}
 
 }

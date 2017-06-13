@@ -15,7 +15,8 @@ public class ActionHandler implements ActionListener {
 			
 			Masse.windowMasse.add(Masse.rot);
 			Masse.windowMasse.add(Masse.blue);
-
+			
+			Masse.neuSquare.setVisible(true);
 			Grundriss.windowForm.setVisible(false);
 			Masse.windowMasse.setVisible(true);
 
@@ -27,7 +28,8 @@ public class ActionHandler implements ActionListener {
 			Masse.windowMasse.add(Masse.orange);
 			Masse.windowMasse.add(Masse.magenta);
 			
-			Masse.neu.setBounds(125, 150, 145, 40);
+			//Masse.neuSquare.setVisible(false);
+			Masse.neuRechtsOben.setVisible(true);
 			
 			Grundriss.windowForm.setVisible(false);
 			Masse.windowMasse.setVisible(true);
