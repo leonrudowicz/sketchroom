@@ -59,6 +59,7 @@ public class Code {
 
 				windowCode.setVisible(false);
 				Create.windowStart.setVisible(true);
+				Var.stateZeichnen = 0;
 			}
 
 		});

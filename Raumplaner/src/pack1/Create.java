@@ -3,6 +3,7 @@ package pack1;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowStateListener;
 
 import javax.swing.*;
 
@@ -14,10 +15,12 @@ public class Create {
 	JButton neu, load, form;
 	
 	public Create() {
+		
+		Var.stateZeichnen = 0;
 
 		// JFrame
 
-		windowStart = new JFrame("Create Room");
+		windowStart = new JFrame("Wilkommen");
 		windowStart.setSize(500, 300);
 		windowStart.setResizable(false);
 		windowStart.setLocationRelativeTo(null);
@@ -61,6 +64,8 @@ public class Create {
 
 		});
 		windowStart.add(form);
+		Var.draw.setBounds(0, 0, 500, 300);
+		windowStart.add(Var.draw);
 
 		windowStart.setVisible(true);
 	}

@@ -3,9 +3,10 @@ package pack1;
 public class Main {
 
 	public static void main(String[] args) {
-		new Create();
-		new Var();
 		new ImageLoader();
+		new Var();
+		new Create();
+		
 		
 	}
 

@@ -16,8 +16,13 @@ public class Zeichnen extends JLabel {
 		Graphics2D g2d = (Graphics2D) g;
 
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		if (Var.stateZeichnen == 0) {
+			g.drawImage(ImageLoader.blueprint, 0, 0, 500, 300, null);
+			g.drawString("Wilkommen bei SketchRoom", 50, 80);
+			
+		}
 		// Grundriss - Form
-		if (Var.stateZeichnen == 1) {
+		else if (Var.stateZeichnen == 1) {
 			g.drawImage(ImageLoader.square, 50, 50, 125, 125, null);
 			g.drawImage(ImageLoader.rechtsOben, 175, 50, 125, 125, null);
 		} // Masse Square
@@ -34,17 +39,20 @@ public class Zeichnen extends JLabel {
 			g.drawImage(ImageLoader.rechtsObenFarbe, 375, 45, 145, 145, null);
 		} //RechtsOben Raum
 		else if (Var.stateZeichnen == 5) {
-			((Graphics2D) g).setStroke(new BasicStroke(4));
-			
+			((Graphics2D) g).setStroke(new BasicStroke(10));
+			Masse.breite2Input = 250;
+			Masse.breiteInput = 500;
+			Masse.laengeInput = 500;
+			Masse.laenge2Input = 250;
 			//Horizontal
-			g.drawLine(0, 0,  Masse.breiteInput - Masse.breite2Input, 0); //oben
+			//g.drawLine(0, 0,  Masse.breiteInput - Masse.breite2Input, 0); //oben
 			g.drawLine(Masse.breiteInput - Masse.breite2Input, Masse.laengeInput - Masse.laenge2Input, Masse.breiteInput, Masse.laengeInput - Masse.laenge2Input);// Mitte
 			g.drawLine(0, 0, Masse.breiteInput, 0); //Unten
 			
 			//Vertikal
 			g.drawLine(0, 0,  0, Masse.laengeInput); //links
 			g.drawLine(Masse.breiteInput - Masse.breite2Input, 0, Masse.breiteInput - Masse.breite2Input, Masse.laengeInput - Masse.breite2Input);// Mitte
-			g.drawLine(0, 0, Masse.breiteInput, 0); //rechts
+			g.drawLine(0, Masse.laengeInput - 50 , Masse.breiteInput, Masse.laengeInput - 50); //rechts
 			
 		}
 

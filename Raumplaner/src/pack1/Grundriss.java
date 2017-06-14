@@ -58,6 +58,7 @@ public class Grundriss {
 
 				windowForm.setVisible(false);
 				Create.windowStart.setVisible(true);
+				Var.stateZeichnen = 0;
 			}
 
 		});
