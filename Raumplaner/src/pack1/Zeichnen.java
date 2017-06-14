@@ -17,9 +17,9 @@ public class Zeichnen extends JLabel {
 
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		if (Var.stateZeichnen == 0) {
+			g.setFont(new Font("Bauhaus 93", Font.PLAIN, 35)); 
 			g.drawImage(ImageLoader.blueprint, 0, 0, 500, 300, null);
-			g.drawString("Wilkommen bei SketchRoom", 50, 80);
-			
+			g.drawString("Wilkommen bei SketchRoom", 30, 60);
 		}
 		// Grundriss - Form
 		else if (Var.stateZeichnen == 1) {

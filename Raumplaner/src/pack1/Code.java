@@ -58,8 +58,9 @@ public class Code {
 			public void actionPerformed(ActionEvent e) {
 
 				windowCode.setVisible(false);
-				Create.windowStart.setVisible(true);
 				Var.stateZeichnen = 0;
+				Create.windowStart.setVisible(true);
+				
 			}
 
 		});

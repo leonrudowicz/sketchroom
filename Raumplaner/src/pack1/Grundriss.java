@@ -55,10 +55,11 @@ public class Grundriss {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				Var.stateZeichnen = 0;
+				
 				windowForm.setVisible(false);
 				Create.windowStart.setVisible(true);
-				Var.stateZeichnen = 0;
+				
 			}
 
 		});

@@ -30,11 +30,12 @@ public class Create {
 		// Template Button
 
 		load = new JButton("Vorlage");
-		load.setBounds(275, 90, 145, 40);
+		load.setBounds(275, 120, 145, 40);
 		load.setVisible(true);
-		load.setBackground(new Color(48, 120, 154));
+		load.setBackground(new Color(31,67,135));
 		load.setForeground(Color.WHITE);
 		load.setFocusPainted(false);
+		load.setToolTipText("Waehle ein bereits vorgefertigten Raum mittels eines Codes aus.");
 		load.addActionListener(new ActionListener() {
 
 			@Override
@@ -48,12 +49,13 @@ public class Create {
 		
 		// Form
 		
-		form = new JButton("Form");
-		form.setBounds(75, 90, 145, 40);
+		form = new JButton("Grundriss");
+		form.setBounds(75, 120, 145, 40);
 		form.setVisible(true);
-		form.setBackground(new Color(48, 120, 154));
+		form.setBackground(new Color(31,67,135));
 		form.setForeground(Color.WHITE);
 		form.setFocusPainted(false);
+		form.setToolTipText("Erstelle einen neuen Raum, bestimme dafür zuerst deinen Grundriss.");
 		form.addActionListener(new ActionListener() {
 
 			@Override
