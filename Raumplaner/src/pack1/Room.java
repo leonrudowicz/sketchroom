@@ -6,8 +6,9 @@ public class Room {
 	static JFrame room;
 	
 	public Room(){
+		
+		
 		room = new JFrame("Raum");
-		room.setSize(Masse.breiteInput, Masse.laengeInput);
 		room.setResizable(false);
 		room.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		room.setLocationRelativeTo(null);

@@ -1,8 +1,11 @@
 package pack1;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -40,7 +43,43 @@ public class Control {
 		drawControl.setVisible(true);
 
 		windowControl.add(save);
+		
+		MouseListener MTeppich = new MouseListener(){
 
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("Teppich wurde angeglickt");
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		};
+		
+		
+		
 		windowControl.setVisible(false);
 
 	}

@@ -12,10 +12,11 @@ public class Create {
 	static JFrame windowStart;
 	JPanel panel;
 	JLabel label;
-	JButton neu, load, form;
-	
+	JButton neu, form, submitCode;
+	JTextField code;
+
 	public Create() {
-		
+
 		Var.stateZeichnen = 0;
 
 		// JFrame
@@ -27,32 +28,12 @@ public class Create {
 		windowStart.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		windowStart.setLayout(null);
 
-		// Template Button
-
-		load = new JButton("Vorlage");
-		load.setBounds(275, 120, 145, 40);
-		load.setVisible(true);
-		load.setBackground(new Color(31,67,135));
-		load.setForeground(Color.WHITE);
-		load.setFocusPainted(false);
-		load.setToolTipText("Waehle ein bereits vorgefertigten Raum mittels eines Codes aus.");
-		load.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				Funktion.openLoad();
-			}
-
-		});
-		windowStart.add(load);
-		
 		// Form
-		
-		form = new JButton("Grundriss");
-		form.setBounds(75, 120, 145, 40);
+
+		form = new JButton("Neuer Raum");
+		form.setBounds(170, 100, 140, 40);
 		form.setVisible(true);
-		form.setBackground(new Color(31,67,135));
+		form.setBackground(new Color(31, 67, 135));
 		form.setForeground(Color.WHITE);
 		form.setFocusPainted(false);
 		form.setToolTipText("Erstelle einen neuen Raum, bestimme dafür zuerst deinen Grundriss.");
@@ -66,6 +47,31 @@ public class Create {
 
 		});
 		windowStart.add(form);
+
+		// Hash
+		code = new JTextField("Hash-Code");
+		code.setBounds(50, 170, 380, 40);
+		windowStart.add(code);
+
+		submitCode = new JButton("Submit");
+		submitCode.setBounds(200, 220, 100, 40);
+		submitCode.setBackground(new Color(31, 67, 135));
+		submitCode.setForeground(Color.WHITE);
+		submitCode.setFocusPainted(false);
+		submitCode.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				// Hash auswerten
+
+				System.out.println("Ja der Submit Button funktioniert");
+			}
+
+		});
+		submitCode.setVisible(true);
+		windowStart.add(submitCode);
+
 		Var.draw.setBounds(0, 0, 500, 300);
 		windowStart.add(Var.draw);
 

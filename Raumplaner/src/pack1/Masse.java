@@ -88,7 +88,7 @@ public class Masse {
 				Funktion.neuControl();
 				Masse.windowMasse.setVisible(false);
 
-				Room.room.setSize(breiteInput, laengeInput);
+				Room.room.setSize(Masse.breiteInput + 6, Masse.laengeInput + 29);
 
 				Var.stateZeichnen = 3;
 				Var.draw.setBounds(0, 0, breiteInput, laengeInput);

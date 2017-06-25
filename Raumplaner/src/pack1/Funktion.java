@@ -22,13 +22,6 @@ public class Funktion {
 		Room.room.add(Var.draw);
 	}
 	
-	public static void openLoad(){
-		
-		Create.windowStart.setVisible(false);
-		new Code();
-		Code.windowCode.setVisible(true);
-		
-	}
 
 	public static void neuControl() {
 		new Control();
