@@ -21,10 +21,10 @@ public class Zeichnen extends JLabel {
 		}
 		// Grundriss - Form
 		else if (Var.stateZeichnen == 1) {
-			
+
 			g.drawImage(ImageLoader.square, 50, 50, 125, 125, null);
 			g.drawImage(ImageLoader.rechtsOben, 175, 50, 125, 125, null);
-			
+
 		} // Masse Square
 		else if (Var.stateZeichnen == 2) {
 
@@ -34,13 +34,13 @@ public class Zeichnen extends JLabel {
 
 		// Raum Square
 		else if (Var.stateZeichnen == 3) {
-
 			((Graphics2D) g).setStroke(new BasicStroke(10));
+
 			// Horizontal
 			g.drawLine(0, 0, Masse.breiteInput, 0);
 			g.drawLine(0, Masse.laengeInput, Masse.breiteInput, Masse.laengeInput);
-			
-			//Vertikal
+
+			// Vertikal
 			g.drawLine(0, 0, 0, Masse.laengeInput);
 			g.drawLine(Masse.breiteInput, 0, Masse.breiteInput, Masse.laengeInput);
 
@@ -53,18 +53,22 @@ public class Zeichnen extends JLabel {
 		else if (Var.stateZeichnen == 5) {
 			((Graphics2D) g).setStroke(new BasicStroke(10));
 			// Horizontal
-			// g.drawLine(0, 0, Masse.breiteInput - Masse.breite2Input, 0);
-			// //oben
+			g.drawLine(0, 0, Masse.breiteInput - Masse.breite2Input, 0);// //oben
+
 			g.drawLine(Masse.breiteInput - Masse.breite2Input, Masse.laengeInput - Masse.laenge2Input,
 					Masse.breiteInput, Masse.laengeInput - Masse.laenge2Input);// Mitte
-			g.drawLine(0, 0, Masse.breiteInput, 0); // Unten
+			g.drawLine(0, Masse.laengeInput, Masse.breiteInput, Masse.laengeInput); // Unten
 
 			// Vertikal
 			g.drawLine(0, 0, 0, Masse.laengeInput); // links
 			g.drawLine(Masse.breiteInput - Masse.breite2Input, 0, Masse.breiteInput - Masse.breite2Input,
 					Masse.laengeInput - Masse.breite2Input);// Mitte
-			g.drawLine(0, Masse.laengeInput, Masse.breiteInput, Masse.laengeInput); // rechts
+			g.drawLine(Masse.breiteInput, Masse.laengeInput - Masse.laenge2Input, Masse.breiteInput, Masse.laengeInput); // rechts
 
+		}
+		else if (Var.stateZeichnen == 6) {
+			//g.drawImage(ImageLoader.teppich, Room.x, Room.y, null);
+			System.out.println("else if wird geöffnet");
 		}
 
 	}

@@ -1,0 +1,5 @@
+Fake Drag and Drop:
+JButton auf Control --> Item active
+30% opacity image auf mousecurser 
+wenn man klickt, wird Jbutton status resetet und image plaziert
+Objekt kann dann mit pfeiltasten bewegt werden

@@ -61,6 +61,9 @@ public class ActionHandler implements ActionListener {
 		} else if (e.getSource() == Grundriss.button[14]) {
 
 		}
-
+		
+		if(e.getSource() == Control.objectButton[0]){
+			System.out.println("Button wurde gedrückt");
+		}
 	}
 }

@@ -18,7 +18,7 @@ public class ZeichnenControl extends JLabel {
 
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-		g.drawImage(ImageLoader.teppich, 100, 100, 50, 50, null);
+		g.drawImage(ImageLoader.teppich, 20, 20, 100, 100, null);
 
 	}
 }

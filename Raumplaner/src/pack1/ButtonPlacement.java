@@ -2,7 +2,7 @@ package pack1;
 
 public class ButtonPlacement {
 
-	public static void place() {
+	public static void placeGrundriss() {
 		// 1 Zeile
 		// Quadrat
 		Grundriss.button[0].setBounds(50, 50, 125, 125);
@@ -40,6 +40,10 @@ public class ButtonPlacement {
 
 		Grundriss.button[14].setBounds(300, 425, 125, 125);
 
+	}
+	
+	public static void placeControl(){
+		Control.objectButton[0].setBounds(20, 20, 100, 100);
 	}
 
 }

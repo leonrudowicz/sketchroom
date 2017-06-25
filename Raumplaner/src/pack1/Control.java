@@ -14,7 +14,7 @@ public class Control {
 	static JButton save;
 	static JFrame windowControl;
 	static ZeichnenControl drawControl;
-
+	static JButton objectButton[] = new JButton[16];
 	public Control() {
 
 		windowControl = new JFrame("Control");
@@ -22,7 +22,19 @@ public class Control {
 		windowControl.setResizable(false);
 		windowControl.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		windowControl.setLayout(null);
-
+		
+		for (int i = 0; i < objectButton.length; i++) {
+			objectButton[i] = new JButton();
+			objectButton[i].setVisible(true);
+			objectButton[i].addActionListener(new ActionHandler());
+			objectButton[i].setFocusPainted(false);
+			objectButton[i].setContentAreaFilled(false);
+			objectButton[i].setBorder(null);
+			windowControl.add(objectButton[i]);
+		}
+		
+		ButtonPlacement.placeControl();
+		
 		save = new JButton("Save");
 		save.setBounds(80, 450, 100, 40);
 		save.setVisible(true);
@@ -44,39 +56,7 @@ public class Control {
 
 		windowControl.add(save);
 		
-		MouseListener MTeppich = new MouseListener(){
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				System.out.println("Teppich wurde angeglickt");
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		};
+		
 		
 		
 		

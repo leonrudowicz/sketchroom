@@ -126,6 +126,8 @@ public class Masse {
 				Masse.windowMasse.setVisible(false);
 				Funktion.neuRaumSquare();
 				
+				Room.room.setSize(Masse.breiteInput + 6, Masse.laengeInput + 29);
+				
 				Var.stateZeichnen = 5;
 				Var.draw.setBounds(0, 0, breiteInput, laengeInput);
 				

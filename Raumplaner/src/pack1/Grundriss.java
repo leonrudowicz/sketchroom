@@ -36,7 +36,7 @@ public class Grundriss {
 			windowForm.add(button[i]);
 		}
 		// Place Buttons
-		ButtonPlacement.place();
+		ButtonPlacement.placeGrundriss();
 
 		// Add draw Funktion
 
