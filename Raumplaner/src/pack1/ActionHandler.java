@@ -64,6 +64,7 @@ public class ActionHandler implements ActionListener {
 		
 		if(e.getSource() == Control.objectButton[0]){
 			System.out.println("Button wurde gedrückt");
+			Var.stateObject = 0;
 		}
 	}
 }

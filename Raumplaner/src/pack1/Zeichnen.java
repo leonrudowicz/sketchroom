@@ -1,9 +1,13 @@
 package pack1;
 
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.*;
 
 public class Zeichnen extends JLabel {
+	static int x,y;
 
 	private static final long serialVersionUID = 1L;
 
@@ -43,7 +47,21 @@ public class Zeichnen extends JLabel {
 			// Vertikal
 			g.drawLine(0, 0, 0, Masse.laengeInput);
 			g.drawLine(Masse.breiteInput, 0, Masse.breiteInput, Masse.laengeInput);
+			
+			Room.room.addMouseListener(new MouseAdapter() {
 
+				public void mousePressed(MouseEvent e) {
+					x = e.getX();
+					y = e.getY();
+					
+					g.drawImage(ImageLoader.teppich, x, y, 100, 100, null);
+					
+					System.out.println(x + "," + y);
+					
+					
+					
+				}
+			});
 		}
 
 		// Masse RechtsOben Farbe
@@ -66,10 +84,8 @@ public class Zeichnen extends JLabel {
 			g.drawLine(Masse.breiteInput, Masse.laengeInput - Masse.laenge2Input, Masse.breiteInput, Masse.laengeInput); // rechts
 
 		}
-		else if (Var.stateZeichnen == 6) {
-			//g.drawImage(ImageLoader.teppich, Room.x, Room.y, null);
-			System.out.println("else if wird geöffnet");
-		}
+		
+		
 
 	}
 

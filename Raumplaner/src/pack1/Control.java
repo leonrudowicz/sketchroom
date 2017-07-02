@@ -1,20 +1,15 @@
 package pack1;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class Control {
 	static JButton save;
 	static JFrame windowControl;
 	static ZeichnenControl drawControl;
 	static JButton objectButton[] = new JButton[16];
+
 	public Control() {
 
 		windowControl = new JFrame("Control");
@@ -22,7 +17,7 @@ public class Control {
 		windowControl.setResizable(false);
 		windowControl.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		windowControl.setLayout(null);
-		
+
 		for (int i = 0; i < objectButton.length; i++) {
 			objectButton[i] = new JButton();
 			objectButton[i].setVisible(true);
@@ -32,9 +27,9 @@ public class Control {
 			objectButton[i].setBorder(null);
 			windowControl.add(objectButton[i]);
 		}
-		
+
 		ButtonPlacement.placeControl();
-		
+
 		save = new JButton("Save");
 		save.setBounds(80, 450, 100, 40);
 		save.setVisible(true);
@@ -55,11 +50,7 @@ public class Control {
 		drawControl.setVisible(true);
 
 		windowControl.add(save);
-		
-		
-		
-		
-		
+
 		windowControl.setVisible(false);
 
 	}
