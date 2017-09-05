@@ -3,7 +3,7 @@ package pack1;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
+import moebel.*;
 
 public class ActionHandler implements ActionListener {
 
@@ -62,9 +62,24 @@ public class ActionHandler implements ActionListener {
 
 		}
 		
-		if(e.getSource() == Control.objectButton[0]){
-			System.out.println("Button wurde gedrückt");
-			Var.stateObject = 0;
+		if (e.getSource() == Room.objectButton[0]) {
+			objectMasse();
+			Var.stateObject = 1;
+			
+
 		}
+		if (e.getSource() == Room.objectButton[1]) {
+			//new Chair();
+			objectMasse();
+			Var.stateObject = 2;
+			
+
+		}
+		
+		
+		
+	}
+	public static void objectMasse(){
+		ObjectMasse.windowObject.setVisible(true);
 	}
 }

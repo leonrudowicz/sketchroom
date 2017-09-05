@@ -29,7 +29,18 @@ public class ButtonPlacement {
 	}
 	
 	public static void placeControl(){
-		Control.objectButton[0].setBounds(20, 20, 100, 100);
+		Room.objectButton[0].setBounds(820, 10, 100, 100);
+		Room.objectButton[1].setBounds(930, 10, 100, 100);
+		
+		Room.objectButton[2].setBounds(820, 120, 100, 100);
+		Room.objectButton[3].setBounds(930, 120, 100, 100);
+		
+		Room.objectButton[4].setBounds(820, 230, 100, 100);
+		Room.objectButton[5].setBounds(930, 230, 100, 100);
+		
+		Room.objectButton[6].setBounds(820, 340, 100, 100);
+		Room.objectButton[7].setBounds(930, 340, 100, 100);
+		
 	}
 
 }

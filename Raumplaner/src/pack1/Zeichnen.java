@@ -1,19 +1,16 @@
 package pack1;
 
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import moebel.*;
 
 import javax.swing.*;
 
-public class Zeichnen extends JLabel {
-	static int x,y;
-
+public class Zeichnen extends JPanel {
+	
+	
 	private static final long serialVersionUID = 1L;
 
-	protected void paintComponent(Graphics g) {
-
-		super.paintComponent(g);
+	public void paint(Graphics g) {
 
 		Graphics2D g2d = (Graphics2D) g;
 
@@ -36,57 +33,68 @@ public class Zeichnen extends JLabel {
 
 		}
 
-		// Raum Square
-		else if (Var.stateZeichnen == 3) {
-			((Graphics2D) g).setStroke(new BasicStroke(10));
-
-			// Horizontal
-			g.drawLine(0, 0, Masse.breiteInput, 0);
-			g.drawLine(0, Masse.laengeInput, Masse.breiteInput, Masse.laengeInput);
-
-			// Vertikal
-			g.drawLine(0, 0, 0, Masse.laengeInput);
-			g.drawLine(Masse.breiteInput, 0, Masse.breiteInput, Masse.laengeInput);
+		if(Var.stateZeichnen > 2){
 			
-			Room.room.addMouseListener(new MouseAdapter() {
+			
 
-				public void mousePressed(MouseEvent e) {
-					x = e.getX();
-					y = e.getY();
-					
-					g.drawImage(ImageLoader.teppich, x, y, 100, 100, null);
-					
-					System.out.println(x + "," + y);
-					
-					
-					
-				}
-			});
+			if(Var.stateObject == 1){
+				g.drawImage(ImageLoader.teppich, Room.x, Room.y, ObjectMasse.laengeInt, ObjectMasse.breiteInt, null); 
+				Room.room.repaint();
+			}
+			if(Var.stateObject == 2){
+				g.drawImage(ImageLoader.stuhl, 100, 100, ObjectMasse.laengeInt, ObjectMasse.breiteInt, null); 
+				Room.room.repaint();
+			}
+			
+		
+			
+			
+			
+			g.drawImage(ImageLoader.teppich, 820, 10, 100, 100, null);
+			
+			g.drawImage(ImageLoader.stuhl, 930, 10, 100, 100, null);
+			
+			
+			// Raum Square
+			if (Var.stateZeichnen == 3) {
+				((Graphics2D) g).setStroke(new BasicStroke(10));
+	
+				// Horizontal
+				g.drawLine(0, 0, 800, 0);
+				g.drawLine(0, 800, 800, 800);
+	
+				// Vertikal
+				g.drawLine(0, 0, 0, 800);
+				g.drawLine(800, 0, 800, 800);
+
+				
+			}
+	
+			 // RechtsOben Raum
+			else if (Var.stateZeichnen == 5) {
+				((Graphics2D) g).setStroke(new BasicStroke(10));
+				// Horizontal
+				g.drawLine(0, 0, Masse.breiteInput - Masse.breite2Input, 0);// //oben
+	
+				g.drawLine(Masse.breiteInput - Masse.breite2Input, Masse.laengeInput - Masse.laenge2Input,
+						Masse.breiteInput, Masse.laengeInput - Masse.laenge2Input);// Mitte
+				g.drawLine(0, Masse.laengeInput, Masse.breiteInput, Masse.laengeInput); // Unten
+	
+				// Vertikal
+				g.drawLine(0, 0, 0, Masse.laengeInput); // links
+				g.drawLine(Masse.breiteInput - Masse.breite2Input, 0, Masse.breiteInput - Masse.breite2Input,
+						Masse.laengeInput - Masse.breite2Input);// Mitte
+				g.drawLine(Masse.breiteInput, Masse.laengeInput - Masse.laenge2Input, Masse.breiteInput, Masse.laengeInput); // rechts
+	
+			}
+		
+			Room.room.repaint();
 		}
-
+		
 		// Masse RechtsOben Farbe
 		else if (Var.stateZeichnen == 4) {
 			g.drawImage(ImageLoader.rechtsObenFarbe, 375, 45, 145, 145, null);
-		} // RechtsOben Raum
-		else if (Var.stateZeichnen == 5) {
-			((Graphics2D) g).setStroke(new BasicStroke(10));
-			// Horizontal
-			g.drawLine(0, 0, Masse.breiteInput - Masse.breite2Input, 0);// //oben
-
-			g.drawLine(Masse.breiteInput - Masse.breite2Input, Masse.laengeInput - Masse.laenge2Input,
-					Masse.breiteInput, Masse.laengeInput - Masse.laenge2Input);// Mitte
-			g.drawLine(0, Masse.laengeInput, Masse.breiteInput, Masse.laengeInput); // Unten
-
-			// Vertikal
-			g.drawLine(0, 0, 0, Masse.laengeInput); // links
-			g.drawLine(Masse.breiteInput - Masse.breite2Input, 0, Masse.breiteInput - Masse.breite2Input,
-					Masse.laengeInput - Masse.breite2Input);// Mitte
-			g.drawLine(Masse.breiteInput, Masse.laengeInput - Masse.laenge2Input, Masse.breiteInput, Masse.laengeInput); // rechts
-
 		}
-		
-		
-
 	}
 
 }

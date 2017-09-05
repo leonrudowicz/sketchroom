@@ -85,13 +85,12 @@ public class Masse {
 				laengeInput = Integer.parseInt(userInputL);
 
 				Funktion.neuRaumSquare();
-				Funktion.neuControl();
 				Masse.windowMasse.setVisible(false);
 
-				Room.room.setSize(Masse.breiteInput + 6, Masse.laengeInput + 29);
+				Room.room.setSize(800 + 6 + 250, 800 + 29); 
 
 				Var.stateZeichnen = 3;
-				Var.draw.setBounds(0, 0, breiteInput, laengeInput);
+				Var.draw.setBounds(0, 0, 800 + 350, 800);
 
 			}
 
@@ -122,14 +121,13 @@ public class Masse {
 				userInputL2 = orange.getText();
 				laenge2Input = Integer.parseInt(userInputL2);
 				
-				Funktion.neuControl(); 
 				Masse.windowMasse.setVisible(false);
 				Funktion.neuRaumSquare();
 				
 				Room.room.setSize(Masse.breiteInput + 6, Masse.laengeInput + 29);
 				
 				Var.stateZeichnen = 5;
-				Var.draw.setBounds(0, 0, breiteInput, laengeInput);
+				Var.draw.setBounds(0, 0, breiteInput + 350, laengeInput);
 				
 
 			}

@@ -6,6 +6,10 @@ public class Main {
 		new ImageLoader();
 		new Var();
 		new Create();
+		new Grundriss();
+		new ObjectMasse();
+		new Room();
+		
 		
 		
 	}

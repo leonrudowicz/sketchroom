@@ -1,13 +1,7 @@
 package pack1;
 
-import java.awt.Color;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextField;
 
 public class Funktion {
 	
@@ -17,18 +11,10 @@ public class Funktion {
 
 
 	public static void neuRaumSquare(){
-		new Room();
 		Room.room.setVisible(true);
 		Room.room.add(Var.draw);
 	}
 	
-
-	public static void neuControl() {
-		new Control();
-		
-		Control.windowControl.setVisible(true);
-		Control.windowControl.add(Control.drawControl);
-	}
 
 	public static void openForm(){
 		
@@ -37,7 +23,6 @@ public class Funktion {
 		
 		Create.windowStart.setVisible(false);
 		
-		new Grundriss();
 		
 		Grundriss.windowForm.setVisible(true);
 		

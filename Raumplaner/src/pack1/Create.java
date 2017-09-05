@@ -14,6 +14,7 @@ public class Create {
 	JLabel label;
 	JButton neu, form, submitCode;
 	JTextField code;
+	static String hash;
 
 	public Create() {
 
@@ -54,7 +55,7 @@ public class Create {
 		windowStart.add(code);
 
 		submitCode = new JButton("Submit");
-		submitCode.setBounds(200, 220, 100, 40);
+		submitCode.setBounds(190, 220, 100, 40);
 		submitCode.setBackground(new Color(31, 67, 135));
 		submitCode.setForeground(Color.WHITE);
 		submitCode.setFocusPainted(false);
@@ -66,6 +67,18 @@ public class Create {
 				// Hash auswerten
 
 				System.out.println("Ja der Submit Button funktioniert");
+				
+				hash = code.getText();
+				if(hash.equals("1337")){
+					windowStart.setVisible(false);
+					Funktion.neuRaumSquare();
+					Room.room.setSize(800 + 6 + 250, 800 + 29); 
+
+					Var.stateZeichnen = 3;
+					Var.draw.setBounds(0, 0, 800 + 350, 800);
+					
+				}
+				
 			}
 
 		});
