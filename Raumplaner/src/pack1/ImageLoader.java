@@ -7,7 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class ImageLoader {
-	static Image teppich, square, rechtsOben, squareFarbe, rechtsObenFarbe, blueprint, stuhl;
+	static Image teppich, square, rechtsOben, squareFarbe, rechtsObenFarbe, blueprint, stuhl, tisch;
 	
 	public ImageLoader(){
 			try {
@@ -18,6 +18,7 @@ public class ImageLoader {
 				rechtsObenFarbe = ImageIO.read(new File("res/RechtsObenGrundrissFarbe.png"));
 				blueprint = ImageIO.read(new File("res/Blueprint.jpg"));
 				stuhl = ImageIO.read(new File("res/Stuhl.jpg"));
+				tisch = ImageIO.read(new File("res/tisch.jpg"));
 				
 			} catch (IOException e) {
 				e.printStackTrace();

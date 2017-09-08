@@ -28,7 +28,6 @@ public class Zeichnen extends JPanel {
 
 		} // Masse Square
 		else if (Var.stateZeichnen == 2) {
-
 			g.drawImage(ImageLoader.squareFarbe, 225, 45, 145, 145, null);
 
 		}
@@ -36,23 +35,34 @@ public class Zeichnen extends JPanel {
 		if(Var.stateZeichnen > 2){
 			
 			
+			
 
 			if(Var.stateObject == 1){
-				g.drawImage(ImageLoader.teppich, Room.x, Room.y, ObjectMasse.laengeInt, ObjectMasse.breiteInt, null); 
+				g.drawImage(ImageLoader.teppich, Room.x, Room.y, ObjectMasse.laengeInt, ObjectMasse.breiteInt, null);
+				g.drawImage(ImageLoader.teppich, Room.x, Room.y, ObjectMasse.laengeInt, ObjectMasse.breiteInt, null);
+				
 				Room.room.repaint();
 			}
 			if(Var.stateObject == 2){
 				g.drawImage(ImageLoader.stuhl, 100, 100, ObjectMasse.laengeInt, ObjectMasse.breiteInt, null); 
 				Room.room.repaint();
 			}
-			
+			if(Chair.draw()){
+				g.drawImage(ImageLoader.stuhl, Chair.posX, Chair.posY, Chair.laenge, Chair.breite, null);
+				Room.room.repaint();
+			}
 		
 			
 			
 			
 			g.drawImage(ImageLoader.teppich, 820, 10, 100, 100, null);
-			
 			g.drawImage(ImageLoader.stuhl, 930, 10, 100, 100, null);
+			g.drawImage(ImageLoader.tisch, 820, 120, 100, 100, null);
+			g.drawImage(ImageLoader.tisch, 930, 120, 100, 100, null);
+			g.drawImage(ImageLoader.stuhl, 820, 230, 100, 100, null);
+			g.drawImage(ImageLoader.stuhl, 930, 230, 100, 100, null);
+			g.drawImage(ImageLoader.stuhl, 820, 340, 100, 100, null);
+			g.drawImage(ImageLoader.stuhl, 930, 340, 100, 100, null);
 			
 			
 			// Raum Square

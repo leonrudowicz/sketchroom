@@ -39,14 +39,12 @@ public class ObjectMasse {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
 				inputL = laenge.getText();
 				laengeInt = Integer.parseInt(inputL);
 				
 				inputB = breite.getText();
 				breiteInt = Integer.parseInt(inputB);
 				
-				System.out.println(laengeInt + "," + breiteInt);
 				ObjectMasse.windowObject.setVisible(false);
 			}
 
@@ -57,5 +55,7 @@ public class ObjectMasse {
 		windowObject.add(breite);
 		windowObject.add(finish);
 	}
+	
+	
 
 }

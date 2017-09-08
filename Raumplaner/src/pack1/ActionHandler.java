@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import moebel.*;
 
 public class ActionHandler implements ActionListener {
+	
+	int c = 0;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -68,18 +70,37 @@ public class ActionHandler implements ActionListener {
 			
 
 		}
-		if (e.getSource() == Room.objectButton[1]) {
-			//new Chair();
+		else if (e.getSource() == Room.objectButton[1]) {
+			//c++;
 			objectMasse();
-			Var.stateObject = 2;
+			new Chair(ObjectMasse.laengeInt, ObjectMasse.breiteInt, Room.x, Room.y);
+			//Var.stateObject = 2;
 			
 
 		}
-		
+		else if (e.getSource() == Room.objectButton[2]) {
+			System.out.println("Test");
+		}
+		else if (e.getSource() == Room.objectButton[3]) {
+			System.out.println("Test");
+		}
+		else if (e.getSource() == Room.objectButton[4]) {
+			System.out.println("Test");
+		}
+		else if (e.getSource() == Room.objectButton[5]) {
+			System.out.println("Test");
+		}
+		else if (e.getSource() == Room.objectButton[6]) {
+			System.out.println("Test");
+		}
+		else if (e.getSource() == Room.objectButton[7]) {
+			System.out.println("Test");
+		}
 		
 		
 	}
 	public static void objectMasse(){
 		ObjectMasse.windowObject.setVisible(true);
 	}
+	
 }

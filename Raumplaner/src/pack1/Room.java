@@ -1,15 +1,19 @@
 package pack1;
 
 import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.event.*;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class Room {
 	static JFrame room;
 	static JButton save;
 	static JButton objectButton[] = new JButton[16];
+	static JPanel control;
 	static int x,y;
 	
 
@@ -20,6 +24,13 @@ public class Room {
 		room.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//room.setLocationRelativeTo(null);
 		room.setLayout(null);
+		
+		control = new JPanel();
+		control.setPreferredSize(new Dimension(600,400));
+		//control.setSize(50,60);
+		control.setBackground(Color.red);
+		control.setVisible(true);
+		room.add(control);
 		
 		save = new JButton("Save");
 		save.setBounds(875, 725, 100, 40);
@@ -55,7 +66,6 @@ public class Room {
 		 room.addMouseListener(new MouseAdapter() {
 			   
 			 public void mouseClicked(MouseEvent e){
-			    
 					x = e.getX();
 					y = e.getY();
 						
@@ -63,7 +73,7 @@ public class Room {
 				    
 			   }
 			   
-			  }); 
+		 }); 
 			
 			
 	}
